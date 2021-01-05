@@ -18,8 +18,9 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "rimraf dist && rollup -c",
+    "build": "rollup -c",
     "build:demo": "vue-cli-service build",
+    "alt-build": "npx @vue/cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
