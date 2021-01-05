@@ -1,5 +1,5 @@
 {
-  "name": "vue-color-gradient-picker",
+  "name": "@tobjoern/vue-color-gradient-picker",
   "description": "Color and gradient picker for vue.js",
   "version": "0.1.2",
   "main": "./dist/index-cjs.js",
@@ -11,17 +11,18 @@
   "homepage": "https://arthay.github.io/vue-color-gradient-picker/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arthay/vue-color-gradient-picker.git"
+    "url": "https://github.com/Tobjoern/vue-color-gradient-picker.git"
   },
   "bugs": {
-    "url": "https://github.com/arthay/vue-color-gradient-picker/issues"
+    "url": "https://github.com/Tobjoern/vue-color-gradient-picker/issues"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "rollup -c",
     "build:demo": "vue-cli-service build",
     "alt-build": "npx @vue/cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "publish": "npm publish"
   },
   "dependencies": {
     "vue-fragment": "^1.5.1"
