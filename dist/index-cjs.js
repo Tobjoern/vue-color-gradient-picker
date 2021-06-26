@@ -2384,8 +2384,6 @@ __vue_render__$d._withStripped = true;
 var script$e = {
     name: "Gradient",
 
-
-
     props: {
         type: {
             type: String,
@@ -2420,34 +2418,24 @@ var script$e = {
         onEndChange: Function,
     },
 
-    watch: {
-        type: function (val) {
-            console.log(("Type changed: " + val));
-            this.gradientType = val;
-        },
-        degree: function (val) {
-            console.log(("Degree changed: " + val));
-            this.gradientDegree = val;
-        },
-        points: {
-            handler: function (val) {
-                console.log(("Points changed: " + val));
-                this.gradientPoints = val;
+    // watch: {
+    //     type: function (val) {
+    //         this.gradientType = val
+    //     },
+    //     degree: function (val) {
+    //         this.gradientDegree = val
+    //     },
+    //     points: {
+    //         handler: function (val) {
+    //             this.gradientPoints = val
 
-                this.activePoint = val[0];
+    //             this.activePoint = val[0];
 
-                this.changeActivePointIndex(0);
-
-                // const { red, green, blue, alpha } = this.activePoint;
-
-                // this.colorRed = red;
-                // this.colorGreen = green;
-                // this.colorBlue = blue;
-                // this.colorAlpha = alpha;
-            },
-            deep: true
-        }
-    },
+    //             this.changeActivePointIndex(0)
+    //         },
+    //         deep: true
+    //     }
+    // },
 
     components: {
         GradientControls: __vue_component__$d,
@@ -2641,6 +2629,14 @@ var script$e = {
             });
         },
 
+        reRenderGradient: function reRenderGradient() {
+            console.log('Re-rendering gradient!');
+            this.gradientType = this.type;
+            this.gradientDegree = this.degree;
+            this.gradientPoints = this.points;
+
+            this.changeActivePointIndex(0);
+        }
     }
 };
 
@@ -2791,6 +2787,18 @@ var script$f = {
         },
     },
 
+    methods: {
+        reRenderGradient: function reRenderGradient() {
+            var gradientInput = this.$refs.gradientInput;
+
+            if (gradientInput) {
+                gradientInput.reRenderGradient();
+            } else {
+                console.error('Gradient input not found!');
+            }
+        }
+    },
+
     components: {
         Solid: __vue_component__$c,
         Gradient: __vue_component__$e
@@ -2811,6 +2819,7 @@ var __vue_render__$f = function() {
     [
       _vm.isGradient
         ? _c("Gradient", {
+            ref: "gradientInput",
             attrs: {
               points: _vm.gradient.points,
               type: _vm.gradient.type,

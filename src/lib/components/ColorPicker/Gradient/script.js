@@ -42,25 +42,6 @@ export default {
         onEndChange: Function,
     },
 
-    watch: {
-        type: function (val) {
-            this.gradientType = val
-        },
-        degree: function (val) {
-            this.gradientDegree = val
-        },
-        points: {
-            handler: function (val) {
-                this.gradientPoints = val
-
-                this.activePoint = val[0];
-
-                this.changeActivePointIndex(0)
-            },
-            deep: true
-        }
-    },
-
     components: {
         GradientControls,
         Area,
@@ -231,5 +212,12 @@ export default {
             });
         },
 
+        reRenderGradient() {
+            this.gradientType = this.type
+            this.gradientDegree = this.degree
+            this.gradientPoints = this.points
+
+            this.changeActivePointIndex(0)
+        }
     }
 };

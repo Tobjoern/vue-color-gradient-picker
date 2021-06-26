@@ -65,6 +65,18 @@ export default {
         },
     },
 
+    methods: {
+        reRenderGradient() {
+            const gradientInput = this.$refs.gradientInput
+
+            if (gradientInput) {
+                gradientInput.reRenderGradient()
+            } else {
+                console.error('Gradient input not found!')
+            }
+        }
+    },
+
     components: {
         Solid,
         Gradient

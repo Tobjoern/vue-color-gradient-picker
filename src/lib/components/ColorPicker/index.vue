@@ -8,6 +8,7 @@
             :onChange="onChange"
             :onStartChange="onStartChange"
             :onEndChange="onEndChange"
+            ref="gradientInput"
         />
 
         <Solid
