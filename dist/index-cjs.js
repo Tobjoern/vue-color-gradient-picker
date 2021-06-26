@@ -2418,25 +2418,6 @@ var script$e = {
         onEndChange: Function,
     },
 
-    // watch: {
-    //     type: function (val) {
-    //         this.gradientType = val
-    //     },
-    //     degree: function (val) {
-    //         this.gradientDegree = val
-    //     },
-    //     points: {
-    //         handler: function (val) {
-    //             this.gradientPoints = val
-
-    //             this.activePoint = val[0];
-
-    //             this.changeActivePointIndex(0)
-    //         },
-    //         deep: true
-    //     }
-    // },
-
     components: {
         GradientControls: __vue_component__$d,
         Area: __vue_component__$6,
@@ -2630,7 +2611,6 @@ var script$e = {
         },
 
         reRenderGradient: function reRenderGradient() {
-            console.log('Re-rendering gradient!');
             this.gradientType = this.type;
             this.gradientDegree = this.degree;
             this.gradientPoints = this.points;

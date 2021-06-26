@@ -1,7 +1,7 @@
 {
   "name": "@tobjoern/vue-color-gradient-picker",
   "description": "Color and gradient picker for vue.js",
-  "version": "0.1.4",
+  "version": "0.3.7",
   "main": "./dist/index-cjs.js",
   "module": "./dist/index-es.js",
   "browser": "./dist/index-cjs.js",
@@ -21,8 +21,7 @@
     "build": "rollup -c",
     "build:demo": "vue-cli-service build",
     "alt-build": "npx @vue/cli-service build",
-    "lint": "vue-cli-service lint",
-    "publish": "npm publish"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "vue-fragment": "^1.5.1"
